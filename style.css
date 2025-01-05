@@ -116,7 +116,13 @@ hr {
     margin-bottom: 0.4rem;
 }
 
-/* Styling for the Next button */
+/* Add this CSS to position the Next button in the navbar */
+.next-action {
+    margin-top: 10px; /* Adjust spacing */
+    display: flex;
+    justify-content: center;
+}
+
 .next {
     border: none;
     background-color: transparent;
@@ -124,18 +130,15 @@ hr {
     font-size: 1rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s, opacity 0.2s;
-    margin-top: 1rem;
+    transition: background-color 0.3s, opacity 0.2s, transform 0.5s ease;
     border-radius: 5px;
 }
 
-/* Hover and focus effects for the Next button */
 .next:hover, .next:focus {
     opacity: 0.8;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Active state for the Next button */
 .next:active {
     background-color: rgba(0, 0, 0, 0.2);
 }
