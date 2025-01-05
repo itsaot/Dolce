@@ -3,15 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("body");
     const quote = document.querySelector(".quote");
     const shuffle = document.querySelector(".shuffle");
+    const nextButton = document.querySelector(".next"); // Reference to the Next button
     const quote_text = document.querySelector("blockquote p");
     const cite = document.querySelector("blockquote cite");
     const fonts_buttons = document.querySelectorAll(".settings .fonts button");
     const modes_buttons = document.querySelectorAll(".settings .modes button");
     const size_buttons = document.querySelectorAll(".settings .size button");
-    const nextButton = document.querySelector(".next");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-    let buttonPosition = 0; // Initial position of the button (starting at 0px)
 
     async function updateQuote() {
         try {
@@ -21,9 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 quote_text.textContent = data.quote;
                 cite.textContent = data.author;
-                moveNextButton(); // Move the button after the quote change
             } else {
-                quote_text.textContent = "An error occured";
+                quote_text.textContent = "An error occurred";
                 console.log(data);
             }
         } catch (error) {
@@ -39,17 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
             random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
             quote_text.textContent = random_quote.content;
             cite.textContent = random_quote.author;
-            moveNextButton(); // Move the button after the quote change
         } else {
-            quote_text.textContent = "An error occured";
+            quote_text.textContent = "An error occurred";
             console.log(data);
         }
-    }
-
-    function moveNextButton() {
-        // Increment the button's position by a random value to create movement effect
-        buttonPosition += 30; // Adjust this value to control the movement distance
-        nextButton.style.transform = `translateY(${buttonPosition}px)`; // Move the button vertically
     }
 
     function updateStyle() {
@@ -100,6 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Next button functionality
+    nextButton.addEventListener("click", () => {
+        loadQuote(); // Load a new quote when clicked
+    });
+
     size_buttons.forEach(function(elem) {
         elem.addEventListener("click", () => changeSize(elem.classList.value));
     });
@@ -113,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     shuffle.addEventListener("click", () => loadQuote());
-    nextButton.addEventListener("click", () => loadQuote()); // Move the button when clicked
     prefersDark.addEventListener('change', handleColorSchemeChange);
 
     updateStyle();
