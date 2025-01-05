@@ -1,0 +1,144 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 80%;
+    max-width: 700px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.quote {
+    font-size: 1.5rem;
+}
+
+.content {
+    font-weight: 200;
+}
+
+cite {
+    font-size: 80%;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.sans {
+    font-family: 'Roboto', sans-serif;
+}
+
+.serif {
+    font-family: 'Noto Serif JP', serif;
+}
+
+.settings {
+    text-align: center;
+    border-color: 1px;
+    background-color: #eee;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.settings:hover {
+    opacity: 1;
+}
+
+.settings button {
+    border: none;
+    background: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.settings button:hover {
+    opacity: 0.6;
+}
+
+.settings .modes button {
+    font-size: 0.8rem;
+}
+
+.settings .action {
+    padding: 0.4rem;
+}
+
+.settings .size button {
+    font-size: 1rem;
+}
+
+.settings .fonts button {
+    font-size: 1.2rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.settings small {
+    font-size: 0.8rem;
+    float: left;
+}
+
+.light {
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff !important;
+}
+
+.dark {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(25, 25, 25) !important;
+}
+
+.dash {
+    opacity: 0.2;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid gray;
+    opacity: 0.2;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.4rem;
+}
+
+/* Styling for the Next button */
+.next {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, opacity 0.2s, transform 0.5s ease; /* Added transform for movement */
+    margin-top: 1rem;
+    border-radius: 5px;
+    position: absolute; /* Position it absolutely */
+    bottom: 10px; /* Adjust this to place it at the desired location */
+}
+
+/* Hover and focus effects for the Next button */
+.next:hover, .next:focus {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Active state for the Next button */
+.next:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
