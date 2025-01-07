@@ -113,4 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStyle();
     loadQuote();
     handleColorSchemeChange(prefersDark);
+
+    // Auto-refresh quotes every 5 seconds
+    setInterval(loadQuote, 5000);
 });
