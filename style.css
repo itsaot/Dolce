@@ -95,12 +95,12 @@ cite {
 
 .light {
     color: rgba(0, 0, 0, 0.9);
-    background-color: #ffffff !important;
+    background: linear-gradient(to bottom, #d708b4, #b067de) !important;
 }
 
 .dark {
     color: rgba(255, 255, 255, 0.9);
-    background-color: rgb(25, 25, 25) !important;
+    background: linear-gradient(to bottom, #465162,#44679b, #100b0f)!important;
 }
 
 .dash {
